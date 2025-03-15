@@ -59,7 +59,10 @@ export default function FileUploader({ files }: FileUploaderProps) {
   const handleDelete = async (fileId: string) => {
     setLoading(true);
     try {
-      await axios.delete(`api/delete/${fileId}`);
+      const response = await axios.delete(`api/delete/${fileId}`);
+      if (response.status !== 200) {
+        throw new Error(`Failed to delete file: ${fileId}`);
+      }
       setRecentFiles((prevFiles) =>
         prevFiles.filter((file) => file.id !== fileId)
       );

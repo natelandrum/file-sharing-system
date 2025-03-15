@@ -27,12 +27,16 @@ export async function deleteFile(fileId: string): Promise<{ rowCount: number }> 
         const fileUrl = fileQuery.rows[0].file_url;
 
         publicId = fileUrl.split("/").pop()?.split(".")[0];
+        const resourceType = fileUrl.includes("image") ? "image" : fileUrl.includes("video") ? "video" : "raw";
 
         if (!publicId) {
             throw new Error("Could not extract Cloudinary public ID.");
         }
 
-        const cloudinaryResult = await cloudinary.uploader.destroy(publicId);
+        const cloudinaryResult = await cloudinary.uploader.destroy(publicId, {
+            resource_type: resourceType,
+            invalidate: true,
+        });
 
         if (cloudinaryResult.result !== "ok" && cloudinaryResult.result !== "not found") {
             throw new Error(`Failed to delete from Cloudinary: ${cloudinaryResult.result}`);
