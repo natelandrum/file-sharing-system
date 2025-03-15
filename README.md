@@ -4,7 +4,7 @@
 
 ## 📌 Overview
 
-**FileX** is a sleek, futuristic **file-sharing application** with built-in **error notifications**. It allows users to upload, download, and manage files effortlessly while ensuring a seamless user experience with real-time feedback and modern UI animations.
+**FileX** is a sleek **file-sharing application** with built-in **error notifications**. It allows users to upload, download, and manage files effortlessly while ensuring a seamless user experience with real-time feedback and modern UI animations.
 
 ## 🔥 Features
 
