@@ -19,10 +19,16 @@ export default function NewFilesList({
     return (
       <>
         {/* File List */}
-        <Typography variant="h6" sx={{ mt: 4 }}>
+        <Typography 
+          variant="h6" 
+          sx={{ 
+            mt: 4,
+            fontSize: { xs: '1rem', sm: '1.25rem' } 
+          }}
+        >
           Recent Files (Last 3 Days)
         </Typography>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 mt-2">
           {recentFiles.map((file, index) => (
             <FileCard
               key={`${file.id}-${index}`}

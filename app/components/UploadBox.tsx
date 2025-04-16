@@ -62,15 +62,15 @@ export default function UploadBox(
         {/* Upload Box */}
         <div
           {...getRootProps()}
-          className="border-dashed border-2 p-6 text-center cursor-pointer bg-gray-800 hover:bg-gray-700 rounded-lg"
+          className="border-dashed border-2 p-4 sm:p-6 text-center cursor-pointer bg-gray-800 hover:bg-gray-700 rounded-lg"
         >
           <input {...getInputProps()} />
           {uploading ? (
-            <Typography variant="h6">Uploading...</Typography>
+            <Typography variant="h6" className="text-sm sm:text-base">Uploading...</Typography>
           ) : (
             <>
-              <CloudUploadOutlinedIcon sx={{ fontSize: 48, color: "gray" }} />
-              <Typography variant="h6">
+              <CloudUploadOutlinedIcon sx={{ fontSize: { xs: 32, sm: 48 }, color: "gray" }} />
+              <Typography variant="h6" className="text-sm sm:text-base" sx={{ mt: 1 }}>
                 Drag & drop files here or click to upload
               </Typography>
             </>

@@ -162,7 +162,7 @@ const handleDownload = async (fileUrl: string, filename: string) => {
   return (
     <>
       {loading && <LoadingSpinner />}
-      <div className="p-6 rounded-lg shadow-lg bg-gray-900 text-white w-full max-w-2xl">
+      <div className="p-4 sm:p-6 rounded-lg shadow-lg bg-gray-900 text-white w-full max-w-2xl">
         <UploadBox
           setUploading={setUploading}
           setRecentFiles={setRecentFiles}

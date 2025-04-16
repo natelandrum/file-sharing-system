@@ -18,13 +18,19 @@ export default function DownloadSelectedFiles({
             onClick={handleDownloadSelected}
             variant="contained"
             color="primary"
-            sx={{ mt: 2 }}
-            startIcon={<DownloadIcon />}
+            size="small"
+            sx={{ 
+              mt: 2, 
+              fontSize: { xs: '0.7rem', sm: '0.8rem', md: '0.875rem' },
+              py: { xs: 1, sm: 1.5 },
+              px: { xs: 2, sm: 3 }
+            }}
+            startIcon={<DownloadIcon sx={{ fontSize: { xs: 16, sm: 20 } }} />}
           >
             Download Selected (ZIP)
           </Button>
         ) : (
-          <div className="h-13"></div>
+          <div className="h-10 sm:h-13"></div>
         )}
       </>
     );
