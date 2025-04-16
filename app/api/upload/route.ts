@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 import { uploadFile } from "@/lib/actions";
+import { unstable_noStore as noStore } from 'next/cache';
 
 export async function POST(req: Request) {
+    // Prevent caching the response
+    noStore();
+    
     try {
     const formData = await req.formData();
     const file = formData.get("file") as File;

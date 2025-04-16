@@ -11,8 +11,8 @@ cloudinary.config({
 });
 
 export async function getFiles(): Promise<DatabaseFile[]> {
-
-    const result = await sql`SELECT * FROM files`;
+    // Use no-store to ensure fresh data on each request
+    const result = await sql`SELECT * FROM files ORDER BY created_at DESC`;
     return result.rows as DatabaseFile[];
 }
 
